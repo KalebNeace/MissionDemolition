@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Slingshot : MonoBehaviour
 {
+   [SerializeField] private LineRenderer rubber;
+   [SerializeField] private Transform firstPoint;
+   [SerializeField] private  Transform secondPoint;
+   [SerializeField] private  Configuration configuration;
+
    // fields set in the Unity Inspector pane
    [Header("Inscribed")]
    public GameObject projectilePrefab;
@@ -15,6 +20,10 @@ public class Slingshot : MonoBehaviour
    public Vector3    launchPos;
    public GameObject projctile;
    public bool       aimingMode;
+void Start(){
+   rubber.SetPosition(0, firstPoint.position);
+   rubber.SetPosition(2, secondPoint.position);
+}
 
  void Awake(){
     Transform launchPointTrans = transform.Find("LaunchPoint");
@@ -45,6 +54,9 @@ public class Slingshot : MonoBehaviour
  }
 
  void Update(){
+   if(Input.GetMouseButton(0)){
+      rubber.SetPosition(1,GetMousePositionInWorld());
+   }
    // If Slingshot is not in aimingMode, don't run this code
    if (!aimingMode) return;
 
@@ -76,5 +88,17 @@ public class Slingshot : MonoBehaviour
       FollowCam.POI = projctile; // Set the MainCamera POI
       projctile = null;
    }
+ }
+
+ Vector3 GetMousePositionInWorld(){
+   Vector3 mousePosition = Input.mousePosition;
+   mousePosition.z += Camera.main.transform.position.z;
+   Vector3 mousePositionInWorld = Camera.main.ScreenToWorldPoint(mousePosition);
+   //configuration.Radius = 10;
+   if (mousePosition.magnitude >  configuration.Radius){
+      mousePositionInWorld.Normalize();
+      mousePositionInWorld *= configuration.Radius;
+   }
+   return mousePositionInWorld - transform.position;
  }
 }
