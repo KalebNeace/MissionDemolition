@@ -355,6 +355,8 @@
 "Assets/Scripts/CloudCover.cs"
 "Assets/Scripts/Configuration.cs"
 "Assets/Scripts/FollowCam.cs"
+"Assets/Scripts/Projectile.cs"
+"Assets/Scripts/ProjectileLine.cs"
 "Assets/Scripts/RigidbodySleep.cs"
 "Assets/Scripts/Slingshot.cs"
 -langversion:9.0

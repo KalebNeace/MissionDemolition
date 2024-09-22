@@ -7,5 +7,5 @@ using UnityEngine;
 public class Configuration : ScriptableObject
 {
   [field:SerializeField] public int Radius {get; private set;} = 4;
-  [field:SerializeField] public GameObject ball {get; private set;};
+  [field:SerializeField] public GameObject ball {get; private set;}
 }

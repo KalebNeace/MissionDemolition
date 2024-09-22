@@ -496,17 +496,9 @@ PrefabInstance:
       value: Slingshot
       objectReference: {fileID: 0}
     - target: {fileID: 2267877857538415071, guid: 7892da07fa1c89249a0872fe90ed6da1, type: 3}
-      propertyPath: projctile
+      propertyPath: projLinePrefab
       value: 
-      objectReference: {fileID: 2122093106517368810, guid: 861b06b7cc9457949a383feb40b41a09, type: 3}
-    - target: {fileID: 2267877857538415071, guid: 7892da07fa1c89249a0872fe90ed6da1, type: 3}
-      propertyPath: configuration
-      value: 
-      objectReference: {fileID: 11400000, guid: b40375e54ee143a41815e4ca4b232053, type: 2}
-    - target: {fileID: 2267877857538415071, guid: 7892da07fa1c89249a0872fe90ed6da1, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 2122093106517368810, guid: 861b06b7cc9457949a383feb40b41a09, type: 3}
+      objectReference: {fileID: 5638373401075673791, guid: 1d45022ef7a841d408082a6c33553be0, type: 3}
     - target: {fileID: 4722642276388525326, guid: 7892da07fa1c89249a0872fe90ed6da1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10
