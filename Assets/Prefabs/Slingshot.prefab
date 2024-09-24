@@ -75,7 +75,7 @@ MonoBehaviour:
   firstPoint: {fileID: 3982020285681168754}
   secondPoint: {fileID: 6424397587999211767}
   configuration: {fileID: 11400000, guid: b40375e54ee143a41815e4ca4b232053, type: 2}
-  projectilePrefab: {fileID: 446847130591841243, guid: 72e91162370babe4581fa5d4e560ff50, type: 3}
+  projectilePrefab: {fileID: 8500303037868736997, guid: b30551e16b4a77041afdcfffb600ad00, type: 3}
   velocityMult: 10
   projLinePrefab: {fileID: 5638373401075673791, guid: 1d45022ef7a841d408082a6c33553be0, type: 3}
   launchPoint: {fileID: 950554280326025259}
