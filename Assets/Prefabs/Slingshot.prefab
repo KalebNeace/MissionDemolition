@@ -75,11 +75,12 @@ MonoBehaviour:
   firstPoint: {fileID: 3982020285681168754}
   secondPoint: {fileID: 6424397587999211767}
   configuration: {fileID: 11400000, guid: b40375e54ee143a41815e4ca4b232053, type: 2}
-  projectilePrefab: {fileID: 2122093106517368810, guid: 861b06b7cc9457949a383feb40b41a09, type: 3}
+  projectilePrefab: {fileID: 446847130591841243, guid: 72e91162370babe4581fa5d4e560ff50, type: 3}
   velocityMult: 10
+  projLinePrefab: {fileID: 5638373401075673791, guid: 1d45022ef7a841d408082a6c33553be0, type: 3}
   launchPoint: {fileID: 950554280326025259}
   launchPos: {x: 0, y: 0, z: 0}
-  projctile: {fileID: 2122093106517368810, guid: 861b06b7cc9457949a383feb40b41a09, type: 3}
+  projctile: {fileID: 8500303037868736997, guid: b30551e16b4a77041afdcfffb600ad00, type: 3}
   aimingMode: 0
 --- !u!1 &950554280326025259
 GameObject:
