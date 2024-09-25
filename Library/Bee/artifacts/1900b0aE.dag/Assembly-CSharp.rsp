@@ -359,6 +359,7 @@
 "Assets/Scripts/Configuration.cs"
 "Assets/Scripts/FollowCam.cs"
 "Assets/Scripts/Goal.cs"
+"Assets/Scripts/MissionDemolition.cs"
 "Assets/Scripts/Projectile.cs"
 "Assets/Scripts/ProjectileLine.cs"
 "Assets/Scripts/RigidbodySleep.cs"
