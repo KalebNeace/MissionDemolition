@@ -35,7 +35,7 @@ Transform:
   - {fileID: 6424397587999211767}
   - {fileID: 3982020285681168754}
   - {fileID: 6815094326263961010}
-  - {fileID: 436792111719903141}
+  - {fileID: 5211861734538179035}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 8.286, y: -3.439, z: -0.003}
 --- !u!135 &2287035257283802890
@@ -71,16 +71,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ceaa2ec4fec5f4383785eb26171297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubber: {fileID: 6206631553639272546}
-  firstPoint: {fileID: 3982020285681168754}
-  secondPoint: {fileID: 6424397587999211767}
+  rubber: {fileID: 1845312230203490199}
   configuration: {fileID: 11400000, guid: b40375e54ee143a41815e4ca4b232053, type: 2}
-  projectilePrefab: {fileID: 8500303037868736997, guid: b30551e16b4a77041afdcfffb600ad00, type: 3}
+  projectilePrefab: {fileID: 2122093106517368810, guid: 861b06b7cc9457949a383feb40b41a09, type: 3}
   velocityMult: 10
   projLinePrefab: {fileID: 5638373401075673791, guid: 1d45022ef7a841d408082a6c33553be0, type: 3}
   launchPoint: {fileID: 950554280326025259}
   launchPos: {x: 0, y: 0, z: 0}
-  projctile: {fileID: 8500303037868736997, guid: b30551e16b4a77041afdcfffb600ad00, type: 3}
+  projctile: {fileID: 1400345106398613508, guid: f5f7c1baefb71284c94b17df5a639684, type: 3}
   aimingMode: 0
 --- !u!1 &950554280326025259
 GameObject:
@@ -196,7 +194,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4369182529651191055
+--- !u!1 &3219967828034904463
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,38 +202,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 436792111719903141}
-  - component: {fileID: 6206631553639272546}
+  - component: {fileID: 5211861734538179035}
+  - component: {fileID: 1845312230203490199}
+  - component: {fileID: 2759994067186670912}
   m_Layer: 0
-  m_Name: Rubber
+  m_Name: Band
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &436792111719903141
+--- !u!4 &5211861734538179035
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4369182529651191055}
+  m_GameObject: {fileID: 3219967828034904463}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.07221503, y: 0.029926293, z: -0.0021421658, w: 0.9969378}
-  m_LocalPosition: {x: 0.49, y: -0.88, z: -8.37}
-  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.75, y: 0, z: 1.54}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4722642276388525326}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!120 &6206631553639272546
+--- !u!120 &1845312230203490199
 LineRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4369182529651191055}
+  m_GameObject: {fileID: 3219967828034904463}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -273,7 +272,7 @@ LineRenderer:
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 5, y: 2.52, z: 1}
-  - {x: 5, y: 4.54, z: 1}
+  - {x: 5, y: 4.45, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -281,8 +280,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.06719208
-        value: 0.12071228
+        time: 0.08428192
+        value: 0.13500023
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -330,9 +329,23 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &2759994067186670912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3219967828034904463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d9609a5867dc5408dcfccd42dc82ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstPoint: {fileID: 6424397587999211767}
+  secondPoint: {fileID: 3982020285681168754}
 --- !u!1 &4658636053290478133
 GameObject:
   m_ObjectHideFlags: 0

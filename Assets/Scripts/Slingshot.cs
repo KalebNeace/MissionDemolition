@@ -5,8 +5,6 @@ using UnityEngine;
 public class Slingshot : MonoBehaviour
 {
    [SerializeField] private LineRenderer rubber;
-   [SerializeField] private Transform firstPoint;
-   [SerializeField] private  Transform secondPoint;
    [SerializeField] private  Configuration configuration;
 
    // fields set in the Unity Inspector pane
@@ -22,8 +20,6 @@ public class Slingshot : MonoBehaviour
    public GameObject projctile;
    public bool       aimingMode;
 void Start(){
-   rubber.SetPosition(0, firstPoint.position);
-   rubber.SetPosition(2, secondPoint.position);
 }
 
  void Awake(){
@@ -86,10 +82,15 @@ void Start(){
       projRB.isKinematic = false;
       projRB.collisionDetectionMode = CollisionDetectionMode.Continuous;
       projRB.velocity = -mouseDelta * velocityMult;
+
+      // Switch to slingshot view immediately before setting POI
+      FollowCam.SWITCH_VIEW(FollowCam.eView.slingshot);
+
       FollowCam.POI = projctile; // Set the MainCamera POI
       // Add a ProjectileLine to the Projectile
       Instantiate<GameObject>(projLinePrefab, projctile.transform);
       projctile = null;
+      MissionDemolition.SHOT_FIRED();
    }
  }
 
