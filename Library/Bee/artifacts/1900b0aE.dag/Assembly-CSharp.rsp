@@ -366,6 +366,7 @@
 "Assets/Scripts/RigidbodySleep.cs"
 "Assets/Scripts/RubberBand.cs"
 "Assets/Scripts/Slingshot.cs"
+"Assets/Scripts/ToGame.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"

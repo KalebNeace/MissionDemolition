@@ -12,6 +12,7 @@ public class Slingshot : MonoBehaviour
    public GameObject projectilePrefab;
    public float      velocityMult = 10f;
    public GameObject projLinePrefab;
+   public AudioSource launchSound;
 
    // fields set dynamically
    [Header("Dynamic")] 
@@ -32,6 +33,7 @@ void Start(){
  void OnMouseEnter(){
     //print("Slingshot:OnMouseEnter()");
     launchPoint.SetActive(true);
+    
  }
 
  void OnMouseExit(){
@@ -91,6 +93,7 @@ void Start(){
       Instantiate<GameObject>(projLinePrefab, projctile.transform);
       projctile = null;
       MissionDemolition.SHOT_FIRED();
+      launchSound.Play();
    }
  }
 
