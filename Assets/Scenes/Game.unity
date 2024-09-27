@@ -771,12 +771,12 @@ MonoBehaviour:
   uitLevel: {fileID: 753351766}
   uitShots: {fileID: 2027386143}
   maxShots: 20
-  castlePos: {x: 50, y: 2, z: 0}
+  castlePos: {x: 50, y: -9.5, z: 0}
   castles:
+  - {fileID: 554197695655831940, guid: 69b0ce495aa7a814d86af1c18d442517, type: 3}
   - {fileID: 2115543502151113965, guid: daecac153b75c174d8d1424c8230e8f0, type: 3}
-  - {fileID: 2115543502151113965, guid: b41fe7183dec6b140b959ea1dd56fb69, type: 3}
-  - {fileID: 2115543502151113965, guid: 69b0ce495aa7a814d86af1c18d442517, type: 3}
-  - {fileID: 2115543502151113965, guid: fa65d71c877c40e439348e7ea7102e2b, type: 3}
+  - {fileID: 8741941363992380246, guid: fa65d71c877c40e439348e7ea7102e2b, type: 3}
+  - {fileID: 8923786295208267646, guid: b41fe7183dec6b140b959ea1dd56fb69, type: 3}
   level: 0
   levelMax: 4
   shotsTaken: 0

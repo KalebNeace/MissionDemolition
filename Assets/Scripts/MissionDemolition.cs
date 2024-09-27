@@ -19,7 +19,7 @@ public class MissionDemolition : MonoBehaviour
     public Text             uitLevel;   // The UIText_Level Text
     public Text             uitShots;   // The UIText_Shots Text
     public int              maxShots;
-    public Vector3          castlePos;  // The place to put castles
+    public Vector3          castlePos;  // The place to put the castles
     public GameObject[]     castles;    // An array of the castles
 
     [Header("Dynamic")]
@@ -91,10 +91,11 @@ public class MissionDemolition : MonoBehaviour
         }
     }
     void NextLevel() {
+        level++;
         if (level == levelMax){
             SceneManager.LoadScene("Victory"); 
+            level--;
         }
-        level++;
         StartLevel();
     }
     static public void SHOT_FIRED() {
