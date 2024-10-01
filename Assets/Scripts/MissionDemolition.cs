@@ -14,7 +14,7 @@ public enum GameMode{
 public class MissionDemolition : MonoBehaviour
 {
     static private MissionDemolition S; // a private Singleton
-    
+
     [Header("Inscribed")]
     public Text             uitLevel;   // The UIText_Level Text
     public Text             uitShots;   // The UIText_Shots Text
@@ -104,4 +104,6 @@ public class MissionDemolition : MonoBehaviour
     static public GameObject GET_CASTLE(){
         return S.castle;
     }
+
+
 }

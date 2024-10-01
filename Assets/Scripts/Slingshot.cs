@@ -9,10 +9,11 @@ public class Slingshot : MonoBehaviour
 
    // fields set in the Unity Inspector pane
    [Header("Inscribed")]
-   public GameObject projectilePrefab;
+   public GameObject[] projectilePrefab;
    public float      velocityMult = 10f;
    public GameObject projLinePrefab;
    public AudioSource launchSound;
+   private int selectedProjectileIndex;
 
    // fields set dynamically
    [Header("Dynamic")] 
@@ -21,6 +22,7 @@ public class Slingshot : MonoBehaviour
    public GameObject projctile;
    public bool       aimingMode;
 void Start(){
+   selectedProjectileIndex = PlayerPrefs.GetInt("SelectedProjectileIndex", 0);
 }
 
  void Awake(){
@@ -45,7 +47,7 @@ void Start(){
    // The player has pressed the mouse button whiile over Slingshot
    aimingMode = true;
    // Instantiate a Projectile
-   projctile = Instantiate(projectilePrefab) as GameObject;
+   projctile = Instantiate(projectilePrefab[selectedProjectileIndex]) as GameObject;
    // Start it at the launchPoint
    projctile.transform.position = launchPos;
    // Set it to isKinematic for now

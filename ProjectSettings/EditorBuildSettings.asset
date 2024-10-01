@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: 45af1e0cbe612cb4ab87f552a9ef7588
   - enabled: 1
+    path: Assets/Scenes/ProjectileSelector.unity
+    guid: f522c2a19ee173b42ae5c5e1a9453782
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
