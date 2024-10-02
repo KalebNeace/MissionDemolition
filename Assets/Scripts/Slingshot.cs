@@ -12,7 +12,6 @@ public class Slingshot : MonoBehaviour
    public GameObject[] projectilePrefab;
    public float      velocityMult = 10f;
    public GameObject projLinePrefab;
-   public AudioSource launchSound;
    private int selectedProjectileIndex;
 
    // fields set dynamically
@@ -21,8 +20,12 @@ public class Slingshot : MonoBehaviour
    public Vector3    launchPos;
    public GameObject projctile;
    public bool       aimingMode;
+   public AudioClip[] sounds;
+   private AudioSource audioSource;
 void Start(){
    selectedProjectileIndex = PlayerPrefs.GetInt("SelectedProjectileIndex", 0);
+   audioSource = gameObject.AddComponent<AudioSource>();
+   audioSource.clip = sounds[selectedProjectileIndex];
 }
 
  void Awake(){
@@ -95,7 +98,8 @@ void Start(){
       Instantiate<GameObject>(projLinePrefab, projctile.transform);
       projctile = null;
       MissionDemolition.SHOT_FIRED();
-      launchSound.Play();
+      audioSource.Play();
+
    }
  }
 
