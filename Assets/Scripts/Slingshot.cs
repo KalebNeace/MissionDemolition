@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Slingshot : MonoBehaviour
 {
-   [SerializeField] private LineRenderer rubber;
-   [SerializeField] private  Configuration configuration;
+   [SerializeField] private LineRenderer lineRenderer;
+   [SerializeField] private Transform rubberBandStart;
+   [SerializeField] private Transform rubberBandEnd;
+   [SerializeField] private Configuration configuration;
 
    // fields set in the Unity Inspector pane
    [Header("Inscribed")]
@@ -13,6 +15,9 @@ public class Slingshot : MonoBehaviour
    public float      velocityMult = 10f;
    public GameObject projLinePrefab;
    private int selectedProjectileIndex;
+   public float maxStretch = 3.0f;
+   private Vector3 initialPosition;
+   private Vector3 pullPosition;
 
    // fields set dynamically
    [Header("Dynamic")] 
@@ -26,6 +31,11 @@ void Start(){
    selectedProjectileIndex = PlayerPrefs.GetInt("SelectedProjectileIndex", 0);
    audioSource = gameObject.AddComponent<AudioSource>();
    audioSource.clip = sounds[selectedProjectileIndex];
+
+   initialPosition = transform.position;
+   lineRenderer.positionCount = 2;
+   UpdateRubberBand(initialPosition, initialPosition);
+
 }
 
  void Awake(){
@@ -58,9 +68,22 @@ void Start(){
  }
 
  void Update(){
-   if(Input.GetMouseButton(0)){
-      rubber.SetPosition(1,GetMousePositionInWorld());
-   }
+   if (Input.GetMouseButton(0)) // When mouse button is held down
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            pullPosition = new Vector3(mousePosition.x, mousePosition.y, 0);
+            float stretch = Vector3.Distance(initialPosition, pullPosition);
+            if (stretch > maxStretch)
+            {
+                pullPosition = initialPosition + (pullPosition - initialPosition).normalized * maxStretch;
+            }
+            UpdateRubberBand(initialPosition, pullPosition);
+        }
+   else if (Input.GetMouseButtonUp(0)) // When mouse button is released
+        {
+            // Implement the logic for launching the projectile
+            UpdateRubberBand(initialPosition, initialPosition); // Reset the rubber band
+        }
    // If Slingshot is not in aimingMode, don't run this code
    if (!aimingMode) return;
 
@@ -102,6 +125,12 @@ void Start(){
 
    }
  }
+ void UpdateRubberBand(Vector3 start, Vector3 end)
+    {
+        lineRenderer.SetPosition(0, start);
+        lineRenderer.SetPosition(1, end);
+    }
+
 
  Vector3 GetMousePositionInWorld(){
    Vector3 mousePosition = Input.mousePosition;
