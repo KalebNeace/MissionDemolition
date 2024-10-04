@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public void ToLevel(){
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("ProjectileSelector");
     }
 }
